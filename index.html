@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Bootstrap -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor"
+      crossorigin="anonymous"
+    />
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css" type="text/css" />
+    <script src="script.js" defer></script>
+    <title>Blackjack!</title>
+  </head>
+  <body class="green">
+    <div class="mx-auto">
+      <h2 class="text-center my-3">Blackjack</h2>
+      <!-- Computer Hand -->
+      <div class="row justify-content-center">
+        <!-- Hand of Cards -->
+        <div class="col-9">
+          <div class="row flex-row-reverse text-center me-4 overflow-visible">
+            <!-- Card 1 -->
+            <div
+              id="c-card-1"
+              class="gx-0 mx-2 d-flex flex-column justify-content-between"
+            >
+              <div class="text-start suit c-suit-1"></div>
+              <div
+                id="c-value-1"
+                class="my-5 align-self-stretch fw-bold fs-4"
+              ></div>
+              <div class="align-self-end suit c-suit-1"></div>
+            </div>
+            <!-- Card 2 -->
+            <div
+              id="c-card-2"
+              class="gx-0 mx-2 d-flex flex-column justify-content-between"
+            >
+              <div class="text-start suit c-suit-2"></div>
+              <div
+                id="c-value-2"
+                class="my-5 align-self-stretch fw-bold fs-4"
+              ></div>
+              <div class="align-self-end suit c-suit-2"></div>
+            </div>
+            <!-- Card 3 -->
+            <div
+              id="c-card-3"
+              class="gx-0 mx-2 d-flex flex-column justify-content-between visually-hidden"
+            >
+              <div class="text-start suit c-suit-3"></div>
+              <div
+                id="c-value-3"
+                class="my-5 align-self-stretch fw-bold fs-4"
+              ></div>
+              <div class="align-self-end suit c-suit-3"></div>
+            </div>
+            <!-- Card 4 -->
+            <div
+              id="c-card-4"
+              class="gx-0 mx-2 d-flex flex-column justify-content-between visually-hidden"
+            >
+              <div class="text-start suit c-suit-4"></div>
+              <div
+                id="c-value-4"
+                class="my-5 align-self-stretch fw-bold fs-4"
+              ></div>
+              <div class="align-self-end suit c-suit-4"></div>
+            </div>
+            <!-- Card 5 -->
+            <div
+              id="c-card-5"
+              class="gx-0 mx-2 d-flex flex-column justify-content-between visually-hidden"
+            >
+              <div class="text-start suit c-suit-5"></div>
+              <div
+                id="c-value-5"
+                class="my-5 align-self-stretch fw-bold fs-4"
+              ></div>
+              <div class="align-self-end suit c-suit-5"></div>
+            </div>
+            <!-- Card 6 -->
+            <div
+              id="c-card-6"
+              class="gx-0 mx-2 d-flex flex-column justify-content-between visually-hidden"
+            >
+              <div class="text-start suit c-suit-6"></div>
+              <div
+                id="c-value-6"
+                class="my-5 align-self-stretch fw-bold fs-4"
+              ></div>
+              <div class="align-self-end suit c-suit-6"></div>
+            </div>
+            <!-- Card 7 -->
+            <div
+              id="p-card-7"
+              class="gx-0 mx-2 d-flex flex-column justify-content-between visually-hidden"
+            >
+              <div class="text-start suit c-suit-7"></div>
+              <div
+                id="p-value-7"
+                class="my-5 align-self-stretch fw-bold fs-4"
+              ></div>
+              <div class="align-self-end suit c-suit-7"></div>
+            </div>
+          </div>
+          <!-- Info and buttons -->
+        </div>
+        <!-- Total -->
+        <div class="col-3 total-section">
+          <h3 class="text-start">Hand: <span id="c-total"></span></h3>
+          <hr />
+        </div>
+      </div>
+      <hr />
+      <!-- Player Hand -->
+      <div class="row justify-content-center">
+        <!-- Balance and Total -->
+        <div class="col-3 total-section">
+          <h3 class="text-start">Hand: <span id="p-total"></span></h3>
+          <hr />
+          <h4 class="text-start">Balance: <span id="p-balance"></span></h4>
+          <h4 class="text-start">Bet: <span id="p-bet"></span></h4>
+        </div>
+        <!-- Hand of Cards -->
+        <div class="col-9">
+          <div class="row text-center me-4 overflow-visible">
+            <!-- Card 1 -->
+            <div
+              id="p-card-1"
+              class="gx-0 mx-2 d-flex flex-column justify-content-between"
+            >
+              <div class="text-start suit p-suit-1"></div>
+              <div
+                id="p-value-1"
+                class="my-5 align-self-stretch fw-bold fs-4"
+              ></div>
+              <div class="align-self-end suit p-suit-1"></div>
+            </div>
+            <!-- Card 2 -->
+            <div
+              id="p-card-2"
+              class="gx-0 mx-2 d-flex flex-column justify-content-between"
+            >
+              <div class="text-start suit p-suit-2"></div>
+              <div
+                id="p-value-2"
+                class="my-5 align-self-stretch fw-bold fs-4"
+              ></div>
+              <div class="align-self-end suit p-suit-2"></div>
+            </div>
+            <!-- Card 3 -->
+            <div
+              id="p-card-3"
+              class="gx-0 mx-2 d-flex flex-column justify-content-between visually-hidden"
+            >
+              <div class="text-start suit p-suit-3"></div>
+              <div
+                id="p-value-3"
+                class="my-5 align-self-stretch fw-bold fs-4"
+              ></div>
+              <div class="align-self-end suit p-suit-3"></div>
+            </div>
+            <!-- Card 4 -->
+            <div
+              id="p-card-4"
+              class="gx-0 mx-2 d-flex flex-column justify-content-between visually-hidden"
+            >
+              <div class="text-start suit p-suit-4"></div>
+              <div
+                id="p-value-4"
+                class="my-5 align-self-stretch fw-bold fs-4"
+              ></div>
+              <div class="align-self-end suit p-suit-4"></div>
+            </div>
+            <!-- Card 5 -->
+            <div
+              id="p-card-5"
+              class="gx-0 mx-2 d-flex flex-column justify-content-between visually-hidden"
+            >
+              <div class="text-start suit p-suit-5"></div>
+              <div
+                id="p-value-5"
+                class="my-5 align-self-stretch fw-bold fs-4"
+              ></div>
+              <div class="align-self-end suit p-suit-5"></div>
+            </div>
+            <!-- Card 6 -->
+            <div
+              id="p-card-6"
+              class="gx-0 mx-2 d-flex flex-column justify-content-between visually-hidden"
+            >
+              <div class="text-start suit p-suit-6"></div>
+              <div
+                id="p-value-6"
+                class="my-5 align-self-stretch fw-bold fs-4"
+              ></div>
+              <div class="align-self-end suit p-suit-6"></div>
+            </div>
+            <!-- Card 7 -->
+            <div
+              id="p-card-7"
+              class="gx-0 mx-2 d-flex flex-column justify-content-between visually-hidden"
+            >
+              <div class="text-start suit p-suit-7"></div>
+              <div
+                id="p-value-7"
+                class="my-5 align-self-stretch fw-bold fs-4"
+              ></div>
+              <div class="align-self-end suit p-suit-7"></div>
+            </div>
+          </div>
+          <!-- Info and buttons -->
+        </div>
+      </div>
+    </div>
+    <!-- Button Group -->
+    <div class="d-flex justify-content-around w-50 mx-auto py-4">
+      <button id="new-game-btn" class="btn btn-light border-dark my-1">
+        New Game
+      </button>
+      <button id="hit-btn" class="btn btn-light border-dark my-1">
+        Hit Me
+      </button>
+      <button id="stay-btn" class="btn btn-light border-dark my-1">Stay</button>
+    </div>
+  </body>
+</html>

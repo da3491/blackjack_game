@@ -1,0 +1,58 @@
+.green {
+  background-color: #007151;
+}
+
+button {
+  width: 125px;
+}
+
+img {
+  width: 25px;
+  height: 25px;
+  margin: 5px;
+}
+
+#c-card-1,
+#c-card-2,
+#c-card-3,
+#c-card-4,
+#c-card-5,
+#c-card-6,
+#c-card-7,
+#p-card-1,
+#p-card-2,
+#p-card-3,
+#p-card-4,
+#p-card-5,
+#p-card-6,
+#p-card-7 {
+  background-color: white;
+  border-radius: 10px;
+  width: 120px;
+  height: 200px;
+}
+
+.total-section {
+  max-width: 175px;
+}
+
+.suit-C {
+  background-image: url("/svg/suit-C.svg");
+}
+.suit-D {
+  background-image: url("/svg/suit-D.svg");
+}
+.suit-S {
+  background-image: url("/svg/suit-S.svg");
+}
+.suit-H {
+  background-image: url("/svg/suit-H.svg");
+}
+
+.suit {
+  background-position: center;
+  background-size: cover;
+  height: 25px;
+  width: 25px;
+  margin: 5px;
+}
